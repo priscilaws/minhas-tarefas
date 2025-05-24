@@ -1,13 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
-
-import tarefasRducer from './ Reducers/tarefas'
+import tarefasReducer from './ reducers/tarefas'
 
 const store = configureStore({
   reducer: {
-    tarefas: tarefasRducer
+    tarefas: tarefasReducer
   }
 })
 
-type RootReducer = ReturnType<typeof store.getState>
-
+export type RootState = ReturnType<typeof store.getState> // <-- This must be here
 export default store
